@@ -1,0 +1,43 @@
+/* Tüm gövde için */
+body {
+    background-color: #6a0dad;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    padding: 20px;
+}
+
+/* İçeriği ortalamak ve sınırlamak için */
+.container {
+    max-width: 900px; /* Sayfa genişliği sınırı */
+    margin: 0 auto;   /* Ortalamak için */
+}
+
+/* Navbar mor tonu */
+.bg-dark-purple {
+    background-color: #4b0082 !important;
+}
+
+/* Slider resimleri */
+.carousel-item img {
+    height: 320px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Slider yazı kutuları */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+/* Beyaz arka planlı tanıtım kutusu */
+.bg-white {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
