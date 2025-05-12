@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Sakarya Doğal Güzellikleri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      transition: background-color 0.5s ease;
+    }
+
+    .default-bg { background-color: #d2a4f3; color: white; }
+    .bg-sapanca { background-color: #e0f7fa; color: #004d40; }
+    .bg-acarlar { background-color: #e8f5e9; color: #1b5e20; }
+    .bg-karasu { background-color: #fffde7; color: #f57f17; }
+    .bg-tarakli { background-color: #f3d99c9f; color: #7b5216c5; }
+    .bg-poyrazlar { background-color:#e8f5e9; color: #1b5e20;}
+
+
+    .bg-nav-sapanca { background-color: #004d40 !important; }
+    .bg-nav-acarlar { background-color: #1b5e20 !important; }
+    .bg-nav-karasu { background-color: #f57f17 !important; }
+    .bg-nav-tarakli { background-color: #7b5216c5 !important;}
+    .bg-nav-poyrazlar { background-color: #1b5e20 !important; }
+
+    .slider-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 10px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .slider-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .slide-img {
+      flex: 0 0 auto;
+      height: 250px;
+      width: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      scroll-snap-align: center;
+    }
+
+    .info-box {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #333;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+      min-height: 200px;
+    }
+  </style>
+</head>
+<body class="default-bg">
+
+    <!-- Navbar -->
+<nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark-purple">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Benim Web Sitem</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
+          <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Özgeçmiş</a></li>
+          <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+          <li class="nav-item"><a class="nav-link active" href="sakarya.html">Sakarya</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Sakarya'nın Doğal Güzellikleri</h2>
+
+  <!-- Yatay Slider -->
+  <div class="slider-container">
+    <img src="img/sapanca.jpg" class="slide-img" alt="Sapanca" onmouseover="showInfo('sapanca')">
+    <img src="img/acarlar.jpg" class="slide-img" alt="Acarlar" onmouseover="showInfo('acarlar')">
+    <img src="img/karasu.jpg" class="slide-img" alt="Karasu" onmouseover="showInfo('karasu')">
+    <img src="img/tarakli.jpg" class="slide-img" alt="Taraklı" onmouseover="showInfo('tarakli')">
+    <img src="img/poyrazlar.jpg" class="slide-img" alt="Poyrazlar" onmouseover="showInfo('poyrazlar')">
+
+  </div>
+
+  <!-- Bilgi Kutusu Altta -->
+  <div id="info" class="info-box">
+    <h4></h4>
+    <p></p>
+  </div>
+</div>
+
+<script>
+  const bilgiler = {
+    sapanca: {
+      baslik: "Sapanca Gölü",
+      icerik: "Sapanca Gölü, doğa severlerin uğrak noktasıdır. Kampçılık ve manzara keyfi için her yıl binlerce turist gelir.",
+      arkaPlan: 'bg-sapanca',
+      navRenk: 'bg-nav-sapanca'
+    },
+    acarlar: {
+      baslik: "Acarlar Longozu",
+      icerik: "Subasar ormanı olan Acarlar, biyolojik çeşitlilik açısından önemli bir ekosistemdir. Kuş gözlemcileri için cazibe merkezidir.",
+      arkaPlan: 'bg-acarlar',
+      navRenk: 'bg-nav-acarlar'
+    },
+    karasu: {
+      baslik: "Karasu Sahili",
+      icerik: "Karasu, yaz tatili için Sakarya'nın en popüler bölgelerindendir. Uzun kumsalları ve temiz deniziyle bilinir.",
+      arkaPlan: 'bg-karasu',
+      navRenk: 'bg-nav-karasu'
+    },
+    tarakli: {
+      baslik: "Taraklı",
+      icerik: "Şin klasmfşalmfcşlaemsfcşlecşlsefmsefm.",
+      arkaPlan: 'bg-tarakli',
+      navRenk: 'bg-nav-tarakli'
+    },
+    poyrazlar: {
+      baslik: "Poyrazlar",
+      icerik: "Şehir merkezine çok yakın, bisiklet ve doğa yürüyüşü için tercih edilen bir doğa alanıdır.",
+      arkaPlan: 'bg-poyrazlar',
+      navRenk: 'bg-nav-poyrazlar'
+    }
+  };
+
+  function showInfo(key) {
+    const infoBox = document.getElementById("info");
+    const body = document.body;
+
+    infoBox.innerHTML = `
+      <h4>${bilgiler[key].baslik}</h4>
+      <p>${bilgiler[key].icerik}</p>
+    `;
+
+    body.className = ''; // Tüm classları temizle
+    body.classList.add(bilgiler[key].arkaPlan);
+
+    navbar.className = 'navbar navbar-expand-lg navbar-dark';
+    navbar.classList.add(bilgiler[key].navRenk);
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

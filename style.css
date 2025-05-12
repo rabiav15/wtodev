@@ -1,6 +1,6 @@
 /* Tüm gövde için */
 body {
-    background-color: #6a0dad;
+    background-color: #dbc4ec;
     color: white;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
@@ -15,7 +15,7 @@ body {
 
 /* Navbar mor tonu */
 .bg-dark-purple {
-    background-color: #4b0082 !important;
+    background-color: #c990f2 !important;
 }
 
 /* Slider resimleri */
