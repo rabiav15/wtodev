@@ -1,149 +1,146 @@
 <!DOCTYPE html>
 <html lang="tr">
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ana Sayfa</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Hakkımda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #dbc4ec;
+      color: #333;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .slider-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 10px 0;
+      scroll-snap-type: x mandatory;
+    }
+
+    .slider-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .slide-img {
+      flex: 0 0 auto;
+      height: 250px;
+      width: 350px;
+      object-fit: cover;
+      border-radius: 12px;
+      cursor: pointer;
+      scroll-snap-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .slide-img:hover {
+      transform: scale(1.05);
+    }
+
+    .info-box {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #333;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 30px;
+      min-height: 160px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .navbar .nav-link.active {
+      font-weight: bold;
+      text-decoration: bold;
+    }
+    .bg-dark-purple {
+      background-color: #4b0082 !important;
+    }
+  </style>
 </head>
 <body>
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark-purple">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">Rabia Varol</a>
+    <a class="navbar-brand" href="index.html">RV</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü Aç">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="ozgecmis.html">Özgeçmiş</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="sehrim.html">Şehrim</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="giris.html">Giriş Yap</a>
-        </li>
+        <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Özgeçmiş</a></li>
+        <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+        <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+        <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+        <li class="nav-item"><a class="nav-link" href="giris.html">Giriş Yap</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
+<!-- Kendini Tanıt -->
 <div class="container mt-5">
-    <!-- KENDİNİ TANITTIĞIN KISIM -->
-    <div class="text-center mb-4 p-4 bg-white text-dark rounded">
-      <h2>Ben Kimim?</h2>
-      <p>
-        <!-- Bu kısmı kendine göre doldur -->
-        Merhaba! Ben buraya kendimle ilgili tanıtıcı bir metin yazacağım. Nerede yaşadığım, nelerden hoşlandığım, ne okuduğum ve genel olarak kişiliğimi yansıtan bilgiler olacak.
-      </p>
-    </div>
+  <div class="text-center mb-4 p-4 bg-white text-dark rounded">
+    <h2>Ben Kimim?</h2>
+    <p>
+      Merhaba! Ben buraya kendimle ilgili tanıtıcı bir metin yazacağım. Nerede yaşadığım, nelerden hoşlandığım, ne okuduğum ve genel olarak kişiliğimi yansıtan bilgiler olacak.
+    </p>
+  </div>
 
-  <title>Hakkımda</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      background-color: #dbc4ec;
-      color: white;
-    }
-  
-    .carousel-item img {
-      height: 350px;
-      object-fit: cover;
-      width: 100%;
-      border-radius: 10px;
-    }
-  
-    .carousel-caption {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 10px;
-      border-radius: 10px;
-    }
-  </style>
-  
-</head>
-<body>
+  <h2 class="text-center mb-3">Hobilerim</h2>
 
-<div class="container mt-5">
-  <h1 class="text-center mb-4">Hobilerim</h1>
+  <!-- Yatay Slider -->
+  <div class="slider-container">
+    <img src="img/kitap.jpg" class="slide-img" alt="Kitap" onmouseover="showInfo('kitap')">
+    <img src="img/dizi.jpg" class="slide-img" alt="Dizi" onmouseover="showInfo('dizi')">
+    <img src="img/ingilizce.jpg" class="slide-img" alt="İngilizce" onmouseover="showInfo('ingilizce')">
+    <img src="img/voleybol.jpg" class="slide-img" alt="Voleybol" onmouseover="showInfo('voleybol')">
+    <img src="img/masatenisi.jpg" class="slide-img" alt="Masa Tenisi" onmouseover="showInfo('masa')">
+  </div>
 
-  <div id="hobiCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-
-      <!-- Kitap Okumak -->
-      <div class="carousel-item active">
-        <img src="img/kitap.jpg" class="d-block w-100" alt="Kitap Okumak">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Kitap Okumak</h5>
-          <p>Yeni dünyalar keşfetmek için kitap okumayı seviyorum. Özellikle psikoloji ve kişisel gelişim kitapları ilgimi çekiyor.</p>
-          <a href="https://www.goodreads.com/" class="btn btn-light btn-sm" target="_blank">Favori kitap sitem</a>
-        </div>
-      </div>
-
-      <!-- Dizi İzlemek -->
-      <div class="carousel-item">
-        <img src="img/dizi.jpg" class="d-block w-100" alt="Dizi İzlemek">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Dizi İzlemek</h5>
-          <p>Gizemli ve bilim kurgu türündeki dizileri izlemeyi çok seviyorum.</p>
-          <a href="https://www.imdb.com/chart/toptv/" class="btn btn-light btn-sm" target="_blank">IMDb Diziler</a>
-        </div>
-      </div>
-
-      <!-- İngilizce Çalışmak -->
-      <div class="carousel-item">
-        <img src="img/ingilizce.jpg" class="d-block w-100" alt="İngilizce Çalışmak">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>İngilizce Çalışmak</h5>
-          <p>Her gün düzenli olarak kelime çalışıyor ve kısa metinler okuyorum.</p>
-          <a href="https://www.duolingo.com/" class="btn btn-light btn-sm" target="_blank">Duolingo</a>
-        </div>
-      </div>
-
-      <!-- Voleybol -->
-      <div class="carousel-item">
-        <img src="img/voleybol.jpg" class="d-block w-100" alt="Voleybol Oynamak">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Voleybol</h5>
-          <p>Takım sporu olarak voleybolu çok seviyorum, hem fiziksel hem zihinsel olarak dinç tutuyor.</p>
-          <a href="https://tvf.org.tr/" class="btn btn-light btn-sm" target="_blank">Voleybol Federasyonu</a>
-        </div>
-      </div>
-
-      <!-- Masa Tenisi -->
-      <div class="carousel-item">
-        <img src="img/masatenisi.jpg" class="d-block w-100" alt="Masa Tenisi">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Masa Tenisi</h5>
-          <p>Refleks geliştirmek için masa tenisi oynamayı tercih ediyorum. Eğlenceli ve dinamik bir spor.</p>
-          <a href="https://www.ittf.com/" class="btn btn-light btn-sm" target="_blank">Uluslararası Masa Tenisi</a>
-        </div>
-      </div>
-
-    </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#hobiCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#hobiCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    </button>
+  <!-- Alt Bilgi Kutusu -->
+  <div id="info" class="info-box">
+    <h5>Hobi Bilgisi</h5>
+    <p>Resimlerin üzerine gelerek hobilerimle ilgili açıklamaları burada görebilirsiniz.</p>
   </div>
 </div>
 
+<script>
+  const bilgiler = {
+    kitap: {
+      baslik: "Kitap Okumak",
+      icerik: "Yeni dünyalar keşfetmek için kitap okumayı seviyorum. Psikoloji ve kişisel gelişim favorim."
+    },
+    dizi: {
+      baslik: "Dizi İzlemek",
+      icerik: "Özellikle bilim kurgu ve gizem türündeki dizilere bayılıyorum. Boş zamanlarımda en keyifli aktivite."
+    },
+    ingilizce: {
+      baslik: "İngilizce Çalışmak",
+      icerik: "Her gün kelime ve metinlerle İngilizcemi geliştirmeye çalışıyorum. Dil öğrenmeyi çok seviyorum."
+    },
+    voleybol: {
+      baslik: "Voleybol",
+      icerik: "Takım ruhunu sevdiğim için voleybol oynamak bana enerji veriyor. Dinamik ve sosyal bir spor."
+    },
+    masa: {
+      baslik: "Masa Tenisi",
+      icerik: "Refleks geliştirmede birebir. Masa tenisi oynarken zaman nasıl geçiyor anlamıyorum."
+    }
+  };
+
+  function showInfo(key) {
+    const infoBox = document.getElementById("info");
+    infoBox.innerHTML = `
+      <h5>${bilgiler[key].baslik}</h5>
+      <p>${bilgiler[key].icerik}</p>
+    `;
+  }
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>

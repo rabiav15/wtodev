@@ -5,14 +5,63 @@
   <title>Şehrim - Sakarya</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding-top: 70px; /* Navbar boşluğu */
+    }
+
+    /* Gradyan navbar */
+    .navbar-gradient {
+      background: linear-gradient(90deg, #ffb6c1, #98fb98); /* pembe -> yeşil */
+    }
+
+    .navbar .nav-link {
+      color: white !important;
+    }
+
+    .navbar .nav-link.active {
+      font-weight: bold;
+      text-decoration: bold;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .info-card {
+      background-color: #e8f5e9;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .map-image {
+      display: block;
+      margin: auto;
+      width: 100%;
+      max-width: 700px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .map-image:hover {
+      transform: scale(1.02);
+    }
+  </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark-purple">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-gradient">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">Benim Web Sitem</a>
+    <a class="navbar-brand" href="index.html">Sakarya</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -21,24 +70,34 @@
         <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
         <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Özgeçmiş</a></li>
         <li class="nav-item"><a class="nav-link active" href="sehrim.html">Şehrim</a></li>
+        <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+        <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
         <li class="nav-item"><a class="nav-link" href="giris.html">Giriş Yap</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Sakarya Tanıtım -->
-<div class="container mt-5 text-white">
-  <h2>Sakarya</h2>
-  <p>
-    Sakarya, Marmara Bölgesi'nin doğusunda yer alan doğal güzellikleri ve tarihi dokusuyla öne çıkan bir ildir. Hem doğa hem kültür açısından zengindir.
-  </p>
+<!-- İçerik -->
+<div class="container mt-5">
+  <!-- Kart -->
+  <div class="info-card">
+    <h2>Sakarya Hakkında</h2>
+    <p>
+      Sakarya, Marmara Bölgesi'nin doğusunda yer alır. Doğal güzellikleri, yaylaları, gölleri ve tarihi yapıları ile dikkat çeker.
+      Sanayi ve tarım açısından gelişmiş olan şehir, aynı zamanda bir öğrenci şehridir. Sakarya Nehri ve Sapanca Gölü gibi doğa harikalarına sahiptir.
+      Bu kartın içine dilediğiniz kadar bilgi ekleyebilirsiniz.
+    </p>
+  </div>
 
-  <div style="text-align: center;">
+  <!-- Harita Görseli -->
+   <h3>Sakarya İline Ait Doğal Güzellikleri Görmek İçin Lütfen Haritaya 
+    Tıklayınız.
+   </h3>
   <a href="sakarya.html">
-    <img src="img/sakarya-siyasi.jpg" alt="Lütfen Tıklayın" class="img-fluid rounded"style="width:400px;">
+    <img src="img/sakarya-siyasi.jpg" alt="Sakarya Siyasi Harita" class="map-image">
   </a>
-  
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
