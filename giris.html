@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Giriş Yap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #ede7f6;
+      font-family: 'Poppins', sans-serif;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: 100px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .navbar .nav-link.active {
+      font-weight: bold;
+      text-decoration: bold;
+    }
+    .btn-mor {
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+  }
+  </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark-purple">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Rabia Varol</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
+          <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Özgeçmiş</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="sehrim.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Şehrim
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="sehrim.html">Genel Bilgiler</a></li>
+              <li><a class="dropdown-item" href="sakarya.html">Sakarya</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+          <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+          <li class="nav-item"><a class="nav-link active" href="giris.html">Giriş Yap</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+<div class="form-container">
+  <h4 class="text-center mb-4" style="color: #4b0082;">Giriş Yap</h4>
+  <form id="loginForm" method="POST" action="giris.php" onsubmit="return validateForm()">
+    <div class="mb-3">
+      <label for="email" class="form-label">Kullanıcı Adı (Mail)</label>
+      <input type="text" class="form-control" id="email" name="email" placeholder="*************@sakarya.edu.tr">
+    </div>
+    <div class="mb-3">
+      <label for="sifre" class="form-label">Şifre</label>
+      <input type="password" class="form-control" id="sifre" name="sifre" placeholder="*******">
+    </div>
+    <button type="submit" class="btn btn-mor w-100">Giriş Yap</button>
+  </form>
+</div>
+
+<script>
+  function validateForm() {
+    const email = document.getElementById("email").value.trim();
+    const sifre = document.getElementById("sifre").value.trim();
+    const emailPattern = /^[^@]+@sakarya\.edu\.tr$/;
+
+    if (!email || !sifre) {
+      alert("Lütfen tüm alanları doldurun.");
+      return false;
+    }
+
+    if (!emailPattern.test(email)) {
+      alert("Lütfen geçerli bir Sakarya Üniversitesi e-posta adresi girin.");
+      return false;
+    }
+
+    return true;
+  }
+</script>
+
+</body>
+</html>
