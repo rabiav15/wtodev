@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>İletişim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #ede7f6;
+      font-family: 'Poppins', sans-serif;
+    }
+    .form-container {
+      max-width: 650px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .btn-light-mor {
+      background-color: #e1bee7;
+      color: #4a148c;
+      border: none;
+    }
+    .btn-mor {
+      background-color: #ba68c8;
+      color: white;
+      border: none;
+    }
+    .btn-dark-mor {
+      background-color: #6a1b9a;
+      color: white;
+      border: none;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+    .navbar .nav-link.active {
+      font-weight: bold;
+      text-decoration: bold;
+    }
+    .bg-dark-purple {
+      background-color: #4b0082 !important;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark-purple">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">RV</a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü Aç">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="iletisim.html">İletişim Formu</a></li>
+          <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Özgeçmiş</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="sehrim.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Şehrim
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="sehrim.html">Genel Bilgiler</a></li>
+              <li><a class="dropdown-item" href="sakarya.html">Sakarya</a></li>
+            </ul>
+          </li>
+          
+          <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+          <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+          <li class="nav-item"><a class="nav-link" href="giris.html">Giriş Yap</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div id="app" class="form-container">
+  <h3 class="text-center mb-4">İletişim Formu</h3>
+
+  <div class="mb-3">
+    <label>Ad Soyad</label>
+    <input type="text" class="form-control" v-model="adsoyad" id="adsoyad">
+  </div>
+
+  <div class="mb-3">
+    <label>Email</label>
+    <input type="text" class="form-control" v-model="email" id="email">
+  </div>
+
+  <div class="mb-3">
+    <label>Telefon</label>
+    <input type="text" class="form-control" v-model="telefon" id="telefon">
+  </div>
+
+  <div class="mb-3">
+    <label>Cinsiyet</label>
+    <select class="form-control" v-model="cinsiyet" id="cinsiyet">
+      <option value="">Seçiniz</option>
+      <option value="Kadın">Kadın</option>
+      <option value="Erkek">Erkek</option>
+      <option value="Belirtmek istemiyorum">Belirtmek istemiyorum</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label>Hobileriniz</label>
+    <div>
+      <label><input type="checkbox" value="Kitap Okumak" v-model="hobiler"> Kitap Okumak</label><br>
+      <label><input type="checkbox" value="Spor Yapmak" v-model="hobiler"> Spor Yapmak</label><br>
+      <label><input type="checkbox" value="Müzik Dinlemek" v-model="hobiler"> Müzik Dinlemek</label><br>
+      <label><input type="checkbox" value="Resim Yapmak" v-model="hobiler"> Resim Yapmak</label><br>
+      <label><input type="checkbox" value="Yürüyüş" v-model="hobiler"> Yürüyüş</label><br>
+      <label><input type="checkbox" value="Yazılım" v-model="hobiler"> Yazılım</label>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label>Okul Durumunuz</label>
+    <div>
+      <label><input type="radio" name="okul" value="Öğrenci" v-model="okuldurumu"> Öğrenci</label><br>
+      <label><input type="radio" name="okul" value="Mezun" v-model="okuldurumu"> Mezun</label><br>
+      <label><input type="radio" name="okul" value="Donduruldu" v-model="okuldurumu"> Donduruldu</label>
+    </div>
+  </div>
+  
+
+  <div class="mb-3">
+    <label>Neden Kayıt Olduğunuza Dair Bir Kaç Cümle Yazınız</label>
+    <textarea class="form-control" rows="4" v-model="mesaj" id="mesaj"></textarea>
+  </div>
+
+  <div class="d-flex justify-content-between">
+    <button class="btn btn-light-mor" @click="temizleForm">Temizle</button>
+    <button class="btn btn-mor" onclick="jsGonder()">JS ile Gönder</button>
+    <button class="btn btn-dark-mor" @click="vueGonder">Vue.js ile Gönder</button>
+  </div>
+</div>
+
+<script>
+  function jsGonder() {
+    const ad = document.getElementById("adsoyad").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const tel = document.getElementById("telefon").value.trim();
+    const mesaj = document.getElementById("mesaj").value.trim();
+    const hobi = document.querySelector('input[name="hobi"]:checked');
+    const cinsiyet = document.getElementById("cinsiyet").value;
+    const okul = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
+
+    const emailRegex = /^[^@]+@[^@]+\.[^@]+$/;
+    const telRegex = /^[0-9]+$/;
+
+    if (!ad || !email || !tel || !mesaj || !hobi || !cinsiyet || okul.length === 0) {
+      alert("Lütfen tüm alanları doldurun.");
+      return;
+    }
+
+    if (!emailRegex.test(email) || !telRegex.test(tel)) {
+      alert("E-posta ya da telefon formatı hatalı.");
+      return;
+    }
+    if (this.hobiler.length === 0) {
+  alert("En az bir hobi seçmelisiniz.");
+  return;
+}
+
+if (!this.okuldurumu) {
+  alert("Okul durumunuzu seçmelisiniz.");
+  return;
+}
+
+
+    const veriler = {
+      adsoyad: ad,
+      email: email,
+      telefon: tel,
+      cinsiyet: cinsiyet,
+      mesaj: mesaj,
+      hobi: hobi.value,
+      okuldurumu: okul
+    };
+
+    localStorage.setItem("formVerileri", JSON.stringify(veriler));
+    window.location.href = "iletisimsonuc.html";
+  }
+
+  new Vue({
+    el: '#app',
+    data: {
+      adsoyad: '',
+      email: '',
+      telefon: '',
+      cinsiyet: '',
+      mesaj: '',
+    hobiler: [],    
+    okuldurumu: ''
+    },
+    methods: {
+      temizleForm() {
+        this.adsoyad = '';
+        this.email = '';
+        this.telefon = '';
+        this.cinsiyet = '';
+        this.mesaj = '';
+        this.hobi = '';
+        this.okuldurumu = [];
+      },
+      vueGonder() {
+        const emailRegex = /^[^@]+@[^@]+\.[^@]+$/;
+        const telRegex = /^[0-9]+$/;
+
+        if (!this.adsoyad || !this.email || !this.telefon || !this.cinsiyet || !this.mesaj || !this.hobi || this.okuldurumu.length === 0) {
+          alert("Tüm alanları doldurmalısınız.");
+          return;
+        }
+
+        if (!emailRegex.test(this.email) || !telRegex.test(this.telefon)) {
+          alert("Geçerli bir email ve rakam içeren telefon giriniz.");
+          return;
+        }
+
+        const veriler = {
+          adsoyad: this.adsoyad,
+          email: this.email,
+          telefon: this.telefon,
+          cinsiyet: this.cinsiyet,
+          mesaj: this.mesaj,
+          hobi: this.hobi,
+          okuldurumu: this.okuldurumu
+        };
+
+        localStorage.setItem("formVerileri", JSON.stringify(veriler));
+        window.location.href = "iletisimsonuc.html";
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

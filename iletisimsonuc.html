@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Gönderilen Bilgiler</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f3e5f5;
+      font-family: 'Poppins', sans-serif;
+    }
+    .container {
+      max-width: 600px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container bg-white p-4 rounded shadow">
+    <h3>Gönderilen Bilgiler</h3>
+    <ul id="veriListesi"></ul>
+    <a href="iletisim.html" class="btn btn-secondary mt-3">Geri Dön</a>
+  </div>
+
+  <script>
+    const veriler = JSON.parse(localStorage.getItem("formVerileri"));
+    const liste = document.getElementById("veriListesi");
+
+    for (let key in veriler) {
+      let deger = Array.isArray(veriler[key]) ? veriler[key].join(", ") : veriler[key];
+      let li = document.createElement("li");
+      li.textContent = `${key}: ${deger}`;
+      liste.appendChild(li);
+    }
+  </script>
+</body>
+</html>
