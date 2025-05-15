@@ -48,36 +48,36 @@
 </head>
 <body>
 
-<!-- Navbar -->
+  <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark-purple">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">RV</a>
-      
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü Aç">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="iletisim.html">İletişim Formu</a></li>
-          <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Özgeçmiş</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="sehrim.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Şehrim
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="sehrim.html">Genel Bilgiler</a></li>
-              <li><a class="dropdown-item" href="sakarya.html">Sakarya</a></li>
-            </ul>
-          </li>
-          
-          <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
-          <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
-          <li class="nav-item"><a class="nav-link" href="giris.html">Giriş Yap</a></li>
-        </ul>
-      </div>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">RV</a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü Aç">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim Formu</a></li>
+        <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Özgeçmiş</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="sehrim.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Şehrim
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="sehrim.html">Genel Bilgiler</a></li>
+            <li><a class="dropdown-item" href="sakarya.html">Sakarya</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+        <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+        <li class="nav-item"><a class="nav-link" href="giris.html">Giriş Yap</a></li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
 <div id="app" class="form-container">
   <h3 class="text-center mb-4">İletişim Formu</h3>
@@ -118,6 +118,7 @@
       <label><input type="checkbox" value="Yazılım" v-model="hobiler"> Yazılım</label>
     </div>
   </div>
+
   <div class="mb-3">
     <label>Okul Durumunuz</label>
     <div>
@@ -126,10 +127,9 @@
       <label><input type="radio" name="okul" value="Donduruldu" v-model="okuldurumu"> Donduruldu</label>
     </div>
   </div>
-  
 
   <div class="mb-3">
-    <label>Neden Kayıt Olduğunuza Dair Bir Kaç Cümle Yazınız</label>
+    <label>Mesaj</label>
     <textarea class="form-control" rows="4" v-model="mesaj" id="mesaj"></textarea>
   </div>
 
@@ -146,32 +146,22 @@
     const email = document.getElementById("email").value.trim();
     const tel = document.getElementById("telefon").value.trim();
     const mesaj = document.getElementById("mesaj").value.trim();
-    const hobi = document.querySelector('input[name="hobi"]:checked');
     const cinsiyet = document.getElementById("cinsiyet").value;
-    const okul = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
+    const hobiler = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
+    const okul = document.querySelector('input[name="okul"]:checked');
 
     const emailRegex = /^[^@]+@[^@]+\.[^@]+$/;
     const telRegex = /^[0-9]+$/;
 
-    if (!ad || !email || !tel || !mesaj || !hobi || !cinsiyet || okul.length === 0) {
-      alert("Lütfen tüm alanları doldurun.");
+    if (!ad || !email || !tel || !mesaj || !cinsiyet || hobiler.length === 0 || !okul) {
+      alert("Tüm alanları doldurmalısınız.");
       return;
     }
 
     if (!emailRegex.test(email) || !telRegex.test(tel)) {
-      alert("E-posta ya da telefon formatı hatalı.");
+      alert("Email veya telefon formatı hatalı.");
       return;
     }
-    if (this.hobiler.length === 0) {
-  alert("En az bir hobi seçmelisiniz.");
-  return;
-}
-
-if (!this.okuldurumu) {
-  alert("Okul durumunuzu seçmelisiniz.");
-  return;
-}
-
 
     const veriler = {
       adsoyad: ad,
@@ -179,8 +169,8 @@ if (!this.okuldurumu) {
       telefon: tel,
       cinsiyet: cinsiyet,
       mesaj: mesaj,
-      hobi: hobi.value,
-      okuldurumu: okul
+      hobiler: hobiler,
+      okuldurumu: okul.value
     };
 
     localStorage.setItem("formVerileri", JSON.stringify(veriler));
@@ -195,8 +185,8 @@ if (!this.okuldurumu) {
       telefon: '',
       cinsiyet: '',
       mesaj: '',
-    hobiler: [],    
-    okuldurumu: ''
+      hobiler: [],
+      okuldurumu: ''
     },
     methods: {
       temizleForm() {
@@ -205,20 +195,20 @@ if (!this.okuldurumu) {
         this.telefon = '';
         this.cinsiyet = '';
         this.mesaj = '';
-        this.hobi = '';
-        this.okuldurumu = [];
+        this.hobiler = [];
+        this.okuldurumu = '';
       },
       vueGonder() {
         const emailRegex = /^[^@]+@[^@]+\.[^@]+$/;
         const telRegex = /^[0-9]+$/;
 
-        if (!this.adsoyad || !this.email || !this.telefon || !this.cinsiyet || !this.mesaj || !this.hobi || this.okuldurumu.length === 0) {
+        if (!this.adsoyad || !this.email || !this.telefon || !this.cinsiyet || !this.mesaj || this.hobiler.length === 0 || !this.okuldurumu) {
           alert("Tüm alanları doldurmalısınız.");
           return;
         }
 
         if (!emailRegex.test(this.email) || !telRegex.test(this.telefon)) {
-          alert("Geçerli bir email ve rakam içeren telefon giriniz.");
+          alert("Geçerli email ve telefon giriniz.");
           return;
         }
 
@@ -228,7 +218,7 @@ if (!this.okuldurumu) {
           telefon: this.telefon,
           cinsiyet: this.cinsiyet,
           mesaj: this.mesaj,
-          hobi: this.hobi,
+          hobiler: this.hobiler,
           okuldurumu: this.okuldurumu
         };
 
