@@ -98,10 +98,14 @@
     <img src="img/acarlar.jpg" class="slide-img" alt="Acarlar" onmouseover="showInfo('acarlar')"></a>
     <a href="https://medyabar.com/haber/24745877/karasu-yeni-sahiline-kavusuyor-projenin-temeli-atildi">
     <img src="img/karasu.jpg" class="slide-img" alt="Karasu" onmouseover="showInfo('karasu')"></a>
+    <a href="https://www.kulturportali.gov.tr/turkiye/sakarya/gezilecekyer/dogancay-selalesi">
+      <img src="img/dogancay.jpg" class="slide-img" alt="Doğançay Şelalesi" onmouseover="showInfo('dogancay')">
+    </a>
     <a href="https://tr.wikipedia.org/wiki/Taraklı">
     <img src="img/tarakli.jpg" class="slide-img" alt="Taraklı" onmouseover="showInfo('tarakli')"></a>
     <a href="https://www.youtube.com/watch?v=Uwff1-zZmtQ">
     <img src="img/poyrazlar.jpg" class="slide-img" alt="Poyrazlar" onmouseover="showInfo('poyrazlar')"></a>
+   
 
   </div>
 
@@ -116,34 +120,41 @@
   const bilgiler = {
     sapanca: {
       baslik: "Sapanca Gölü",
-      icerik: "Sapanca Gölü, doğa severlerin uğrak noktasıdır. Kampçılık ve manzara keyfi için her yıl binlerce turist gelir.",
+      icerik: "Sapanca, Sakarya'nın doğal güzellikleriyle ünlü, Marmara Bölgesi'nin en çok ziyaret edilen turistik yerlerinden biridir. Özellikle Sapanca Gölü, çevresiyle birlikte dinlenmek ve doğayla iç içe zaman geçirmek isteyenler için ideal bir ortam sunar. Göl kenarında yürüyüş yolları, bisiklet parkurları ve restoranlar yer alırken, doğa sporları ve su aktiviteleri de oldukça popülerdir. Sapanca’nın doğusunda yer alan Maşukiye, şelaleleri ve alabalık tesisleriyle gastronomi tutkunlarının ilgisini çeker. Ayrıca Sapanca'da çok sayıda butik otel ve bungalov konaklama seçeneği bulunur; bu da bölgeyi hafta sonu kaçamakları için cazip hale getirir. Tarihsel olarak da önemli bir geçmişe sahiptir; Osmanlı döneminden kalan yapılar hala ayaktadır. Her mevsim ayrı bir güzelliğe bürünen Sapanca, doğa ile iç içe tatil arayanlar için vazgeçilmezdir. Sapanca Gölü, Marmara bölgesinde içme suyu kaynağı olarak kullanılan ender doğal göllerden biridir.",
       arkaPlan: 'bg-sapanca',
       navRenk: 'bg-nav-sapanca'
     },
     acarlar: {
       baslik: "Acarlar Longozu",
-      icerik: "Subasar ormanı olan Acarlar, biyolojik çeşitlilik açısından önemli bir ekosistemdir. Kuş gözlemcileri için cazibe merkezidir.",
+      icerik: "Acarlar Longozu, Sakarya’nın Karasu ve Kaynarca ilçeleri arasında yer alan, Türkiye’nin en büyük tek parça longoz ormanıdır. Subasar orman olarak da bilinen bu ekosistem, yılın büyük bölümünde su altında kalan ve özel flora-faunaya sahip bir bölgedir. Nilüfer çiçekleriyle kaplı sular, kuş cıvıltıları ve devasa ağaçlar arasında yürüyüş yapmak ziyaretçilere eşsiz bir deneyim sunar. Özellikle kuş gözlemcileri ve doğa fotoğrafçıları için benzersiz bir alandır. Longoz çevresinde ahşap yürüyüş yolları, gözlem kuleleri ve dinlenme alanları bulunur. İlkbahar ve sonbaharda ayrı güzelliklere bürünen bölge, biyolojik çeşitlilik açısından koruma altındadır. Longozun bazı bölümleri teknelerle gezilebilir. Acarlar Longozu’nda bir gezinti sırasında aynı anda su samuru, yaban ördeği ve su kaplumbağasını görebilirsiniz.",
       arkaPlan: 'bg-acarlar',
       navRenk: 'bg-nav-acarlar'
     },
     karasu: {
       baslik: "Karasu Sahili",
-      icerik: "Karasu, yaz tatili için Sakarya'nın en popüler bölgelerindendir. Uzun kumsalları ve temiz deniziyle bilinir.",
+      icerik: "Karasu, Sakarya'nın kuzeyinde, Karadeniz'e kıyısı olan en önemli sahil ilçesidir. Yaz aylarında hem yerli hem de yabancı turistlerin akınına uğrayan Karasu, özellikle uzun ve geniş plajlarıyla dikkat çeker. Plajları doğal kum yapısına sahiptir ve mavi bayraklı bölgelere sahiptir. Sahil boyunca yürüyüş yolları, kafe ve eğlence alanları da mevcuttur. İlçede balıkçılık önemli bir geçim kaynağıdır; Karasu limanı hem ticari hem de turistik faaliyetler açısından kullanılır. Sakarya Nehri'nin denize döküldüğü delta bölgesi, doğal yaşam açısından da zengindir. Karasu ayrıca yaz festivalleri, konserler ve etkinliklerle de canlı bir sosyal yaşama sahiptir. Türkiye’nin en uzun doğal plajlarından birine sahip olması Karasu’yu benzersiz kılar.",
       arkaPlan: 'bg-karasu',
       navRenk: 'bg-nav-karasu'
     },
+    dogancay: {
+  baslik: "Doğançay Şelalesi",
+  icerik: "Doğançay Şelalesi, Sakarya’nın Geyve ilçesi sınırlarında yer alan ve bölgenin en bilinen şelalelerinden biridir. Doğayla iç içe olmak isteyenler için trekking parkurları ve kamp alanlarıyla oldukça cazip bir rota sunar. Şelaleye ulaşmak için yapılan doğa yürüyüşü, yolda kuş sesleri, orman kokusu ve hafif bir serinlikle keyifli bir hâle gelir. İki katlı akan yapısıyla dikkat çeken şelale, yaz aylarında bile serinliğini korur. Doğançay çevresi, botanik zenginliğiyle de dikkat çeker; endemik bitkiler ve zengin bir yaban hayatı mevcuttur. Özellikle ilkbaharda şelalenin etrafı yeşilin binbir tonuyla çevrelenir. Ziyaretçiler, şelale çevresinde fotoğraf çekmeyi ve kamp yapmayı tercih eder. Doğançay Şelalesi’ne çıkan dar patikaların sonunda karşılaşılan görüntü, yürümeye değdiğini kanıtlar.",
+  arkaPlan: 'bg-acarlar',
+  navRenk: 'bg-nav-acarlar'
+},
     tarakli: {
       baslik: "Taraklı",
-      icerik: "Şin klasmfşalmfcşlaemsfcşlecşlsefmsefm.",
+      icerik: "Taraklı, Sakarya’nın güneyinde yer alan tarihi ve kültürel bir ilçedir. Osmanlı’dan kalma mimari yapıları, taş sokakları ve ahşap evleri ile adeta zamanda yolculuk hissi uyandırır. Taraklı, “Sakin Şehir” (Cittaslow) unvanına sahip olup, yavaş yaşam felsefesiyle dikkat çeker. İlçede bulunan Yunus Paşa Camii ve tarihi hamam gibi yapılar, mimari açıdan büyük öneme sahiptir. Taraklı halkı geleneksel el sanatlarına sahiptir; özellikle tarak yapımı ve ahşap işçiliği meşhurdur. Yerel pazarda ev yapımı reçeller, erişteler ve Taraklı Helvası gibi özgün tatlar bulunur. Doğal güzellikleriyle de öne çıkan ilçe, aynı zamanda termal su kaynaklarıyla da ziyaretçileri cezbeder. Taraklı’nın dar sokaklarında yürürken Osmanlı döneminden kalma yüzlerce yıllık evlerin gölgesinde dinlenmek mümkündür. Taraklı evlerinin çivisiz yapıldığı söylenir ve bu hâlâ yerel halk arasında anlatılır.",
       arkaPlan: 'bg-tarakli',
       navRenk: 'bg-nav-tarakli'
     },
     poyrazlar: {
       baslik: "Poyrazlar",
-      icerik: "Şehir merkezine çok yakın, bisiklet ve doğa yürüyüşü için tercih edilen bir doğa alanıdır.",
+      icerik: "Poyrazlar Gölü, Sakarya şehir merkezine yaklaşık 10 kilometre uzaklıkta bulunan doğal bir göldür. Sakarya Nehri’ne yakın konumda bulunan bu alan, doğa ile baş başa kalmak isteyenler için oldukça ideal bir mekândır. Göl ve çevresi, kampçılık, bisiklet turu, doğa yürüyüşleri ve piknik aktiviteleri için tercih edilir. Doğal habitatıyla kuş gözlemcileri için de zengin bir alandır. Özellikle hafta sonları Sakarya halkının dinlenmek için tercih ettiği alanlardan biridir. Göl çevresinde yürüyüş yolları, piknik masaları ve çocuk oyun alanları bulunur. Sonbaharda dökülen yaprakların göle yansıması kartpostallık manzaralar oluşturur. Bölgede yapılaşma sınırlı olduğundan doğal görünüm büyük ölçüde korunmuştur. Poyrazlar Gölü'nün, taş ocağından doğal göle dönüşmesi doğanın kendi kendini yenileme gücünü gözler önüne serer.",
       arkaPlan: 'bg-poyrazlar',
       navRenk: 'bg-nav-poyrazlar'
     }
+
   };
 
   function showInfo(key) {
