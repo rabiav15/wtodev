@@ -57,6 +57,46 @@
     .bg-dark-purple {
       background-color: #4b0082 !important;
     }
+  
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background-color: rgba(75, 0, 130, 0.6);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    transition: 0.2s;
+  }
+
+  .slider-btn:hover {
+    background-color: rgba(75, 0, 130, 0.9);
+  }
+
+  .slider-btn.left {
+    left: -10px;
+  }
+
+  .slider-btn.right {
+    right: -10px;
+  }
+
+  .slider-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 40px; /* Butonlara yer bırak */
+    scroll-snap-type: x mandatory;
+  }
+
+  .slider-container::-webkit-scrollbar {
+    display: none;
+  }
+
   </style>
 </head>
 <body>
@@ -108,8 +148,13 @@
 
   <h2 class="text-center mb-3">Hobilerim</h2>
 
+  <div class="position-relative">
+    <!-- Sol Tuş -->
+    <button class="slider-btn left" onclick="scrollSlider(-1)">‹</button>
+  
   <!-- Yatay Slider -->
-  <div class="slider-container">
+  <div class="slider-container" id="slider">
+
     <a href="https://1000kitap.com/yildiz-gezgini--28372/incelemeler">
     <img src="img/kitap.jpg" class="slide-img" alt="Kitap" onmouseover="showInfo('kitap')"></a>
     <a href="https://www.primevideo.com/offers/nonprimehomepage/ref=dv_web_force_root">
@@ -121,6 +166,8 @@
     <a href="https://www.tmtf.gov.tr/">
     <img src="img/masatenisi.jpg" class="slide-img" alt="Masa Tenisi" onmouseover="showInfo('masa')"></a>
   </div>
+  <button class="slider-btn right" onclick="scrollSlider(1)">›</button>
+</div>
 
   <!-- Alt Bilgi Kutusu -->
   <div id="info" class="info-box">
@@ -152,6 +199,20 @@
       icerik: "Masa tenisi benim için ilkokul dönemim demek.İkinci sınıfta düzenlenen bir gezi için gittiğimiz spor kompleksinde oradaki eğitmenler tarafından yeteneğim olduğu düşüldü ve yıllarda masa tenisi eğitimi aldım.Bir sporu hem severek hem de yeteneğin olarak yapmak gurur verici."
     }
   };
+
+  function scrollSlider(direction) {
+    const slider = document.getElementById('slider');
+    const scrollAmount = 370; // Bir kart genişliği kadar
+
+    slider.scrollBy({
+      left: scrollAmount * direction,
+      behavior: 'smooth'
+    });
+  }
+  document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowLeft') scrollSlider(-1);
+  if (e.key === 'ArrowRight') scrollSlider(1);
+});
 
   function showInfo(key) {
     const infoBox = document.getElementById("info");
