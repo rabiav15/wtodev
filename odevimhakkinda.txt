@@ -1,0 +1,10 @@
+RV'SPERSONAL
+
+Html,Css ve JavaScript ile kodladığım websitemde ; 
+>>index sayfasında kendimi tanıtan bir paragrafın ardından hobilerimin olduğu bir slider ve 
+sliderin her biri görseline tıklandığında alakalı websitelerine giden ve 
+görsellerin üzerinde durulduğunda görselde hobilerimle alakalı birkaç cümle görünmektedir.
+>>iletisim sayfasında ise tüm form elemanları kullandığım bir iletisim formu ve 
+temizleme, ardından iki farklı script ile formları gönderme butonu bulunmaktadır.
+formlar gönderildiği ise doldurulan form bilgilerinin görüntülendiği bir sayfaya ulaşılmaktadır.
+>>
