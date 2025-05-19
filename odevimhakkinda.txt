@@ -1,10 +1,37 @@
 RV'SPERSONAL
-
-Html,Css ve JavaScript ile kodladığım websitemde ; 
+SİTEM HAKKINDA 
+Html,Css ve JavaScript ile kodladığım websitemi öncelikle 
+infinityfree web hosting kullanarak internet ortamına taşıdığımı belirtip sitemin
+web adresi : https://rvspersonal.infinityfreeapp.com bu şekildedir.
+Web sitemin sayfalarını şu şekilde özetleyebilirim:
 >>index sayfasında kendimi tanıtan bir paragrafın ardından hobilerimin olduğu bir slider ve 
 sliderin her biri görseline tıklandığında alakalı websitelerine giden ve 
 görsellerin üzerinde durulduğunda görselde hobilerimle alakalı birkaç cümle görünmektedir.
 >>iletisim sayfasında ise tüm form elemanları kullandığım bir iletisim formu ve 
 temizleme, ardından iki farklı script ile formları gönderme butonu bulunmaktadır.
 formlar gönderildiği ise doldurulan form bilgilerinin görüntülendiği bir sayfaya ulaşılmaktadır.
->>
+>>ozgecmis sayfası ise bir cv niteliğinde, kartlar kullanarak 
+estetik bir görüntü yakalamaya çalışarak kullanıldı.
+bu sayfada bir vesikalığım bulunmakta ve vesikalığa tıklandığında linkedin profilime gidilmektedir.
+>>sehrim sayfasında doğduğum şehir olan sakarya hakkında genel bilgiler var ve 
+sakaryanın bir siyasi haritası görseli var görsele tıklanarak 
+sakaryanın doğal güzellikleri sayfasına yönlendiriliyorsunuz.
+>>sakarya sayfası bu sayfaya şehrim sayfasından yönelendirilidği gibi 
+navbardan şehrimin alt başlığı altında direkt olarak sakarya 
+seçilerek de gidilebilir. bu sayfada da indexde olduğu gibi bir slider ve 
+altında ilgili görselle alakalı ilginç bilgiler bulunan bir box bulunmakta.
+burada özenerek tasarladığım noktalardan biri her görselin üzerine gelindiğinde navbarın ve 
+site arka planının görselin renkleriyle uyumlu şekilde 
+değişmesi ve estetikliğin artmasıdır.
+>>mirasımız sayfası ise Sakaryanın kültürel geçmişine destek sağlayan beşköprü ve deprem müzesinin görselleri 
+görselleri ile tanıtıcı metinler bulunmaktadır.
+>>ilgia alanlarım sayfasında API kullanarak Friends dizisinin 
+1.sezon istatsitiklerini themovie sayfasından çekerek sizlere gösterdim.
+>>giris yap sayfasında bir log in butonu ile php kullanarak kendi öğrenci emailimin 
+giriş yapabileceği vebilgiler doğru girildiğinde hoşgeldiniz + numaram 
+yazılı bir sayfaya yönlendirme bulunmakta.
+burada dikkat edilen husus doğru yetkilendirme ve 
+php kodunun e posta ve şifre kontorolunu doğru şekilde yapıldığının gösterilmesidir.
+giriş yapma sayfaısnda sadece okul emaili ile giriş yapılabaileceğini göstermek adına 
+boxların içini *****sakarya.edu.tr olarak gösterdiğimi ayrıca belirtmek isterim.
+
