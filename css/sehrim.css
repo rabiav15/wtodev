@@ -1,0 +1,47 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding-top: 70px; /* Navbar boşluğu */
+  }
+
+  /* Gradyan navbar */
+  .navbar-gradient {
+    background: linear-gradient(90deg, #ffb6c1, #98fb98); /* pembe -> yeşil */
+  }
+
+  .navbar .nav-link {
+    color: white !important;
+  }
+
+  .navbar .nav-link.active {
+    font-weight: bold;
+    text-decoration: bold;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .info-card {
+    background-color: #e8f5e9;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .map-image {
+    display: block;
+    margin: auto;
+    width: 100%;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+  }
+
+  .map-image:hover {
+    transform: scale(1.02);
+  }
